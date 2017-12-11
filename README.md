@@ -1,4 +1,4 @@
-# Welcome to the Java Data Structures!
+# Welcome to the Java Algorithms and Data Structures!
 Based in [uniovi.ed](https://github.com/ZenMaster91/uniovi.ed).
 
 Here you'll find implementations of popular algorithms and data structures in everyone's favorite new language Java, with detailed explanations of how they work.
