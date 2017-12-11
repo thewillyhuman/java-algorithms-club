@@ -1,10 +1,10 @@
-package BubbleSort.tests;
+package Bubblesort.tests;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import BubbleSort.Bubble;
+import Bubblesort.Bubble;
 
 public class BubbleTest {
 

@@ -1,4 +1,4 @@
-package BubbleSort;
+package Bubblesort;
 
 /**
  * Bubble sort is a sorting algorithm that is implemented by starting in the
