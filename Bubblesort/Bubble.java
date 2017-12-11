@@ -12,9 +12,8 @@ package Bubblesort;
  * @version 1
  * @since 201712120028.
  * @formatter Oviedo Computing Community Extended.
- * @param <T> is the type to sort.
  */
-public class Bubble<T extends Comparable<T>> {
+public class Bubble {
 
 	/**
 	 * Average: O(N^2) Worst: O(N^2) Memory: O(1)
@@ -28,7 +27,7 @@ public class Bubble<T extends Comparable<T>> {
 	 * 
 	 * @param elements array to be sorted. It is sorted in the same array.
 	 */
-	public void sort( T[] elements ) {
+	public static <T extends Comparable<T>> void sort( T[] elements ) {
 		for (int i = 1; i < elements.length; i++) { // O(n)
 			for (int j = elements.length - 1; j >= i; j--) { // O(n)
 				if (elements[j - 1].compareTo( elements[j] ) > 0) {

@@ -18,18 +18,17 @@ public class BubbleTest {
 			sortDblArr = { Double.MIN_VALUE, 0.00004, 1.9, 2.6, Double.MAX_VALUE };
 
 	@Test public void integerSortTest() {
-		new Bubble<Integer>().sort( intArr );
+		Bubble.sort( intArr );
 		assertArrayEquals( sortIntArr, intArr );
 	}
 
 	@Test public void stringSortTest() {
-		new Bubble<String>().sort( strArr );
+		Bubble.sort( strArr );
 		assertArrayEquals( sortStrArr, strArr );
 	}
 	
 	@Test public void doubleSortTest() {
-		new Bubble<Double>().sort( dblArr );
+		Bubble.sort( dblArr );
 		assertArrayEquals( sortDblArr, dblArr );
 	}
-
 }
