@@ -1,6 +1,5 @@
 package AVLTree;
 
-
 /**
  * Represents an AVL leave a an AVLTree.
  * 
