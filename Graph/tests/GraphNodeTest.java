@@ -26,39 +26,39 @@ public class GraphNodeTest {
 
 	@Test public void setElementTest() {
 		// Strings...
-		StringGraphNode.setElement( "B" );
-		assertEquals( "B", StringGraphNode.getElement() );
-		StringGraphNode.setElement( null );
-		assertEquals( "B", StringGraphNode.getElement() );
-		StringGraphNode.setElement( "C" );
-		assertEquals( "C", StringGraphNode.getElement() );
+		StringGraphNode.setContent( "B" );
+		assertEquals( "B", StringGraphNode.setContent() );
+		StringGraphNode.setContent( null );
+		assertEquals( "B", StringGraphNode.setContent() );
+		StringGraphNode.setContent( "C" );
+		assertEquals( "C", StringGraphNode.setContent() );
 
 		// Integers...
-		IntegerGraphNode.setElement( 2 );
-		assertEquals( 2, (int) IntegerGraphNode.getElement() );
-		IntegerGraphNode.setElement( null );
-		assertEquals( 2, (int) IntegerGraphNode.getElement() );
-		IntegerGraphNode.setElement( 3 );
-		assertEquals( 3, (int) IntegerGraphNode.getElement() );
+		IntegerGraphNode.setContent( 2 );
+		assertEquals( 2, (int) IntegerGraphNode.setContent() );
+		IntegerGraphNode.setContent( null );
+		assertEquals( 2, (int) IntegerGraphNode.setContent() );
+		IntegerGraphNode.setContent( 3 );
+		assertEquals( 3, (int) IntegerGraphNode.setContent() );
 
 		// Characters...
-		CharGraphNode.setElement( 'B' );
-		assertEquals( 'B', (char) CharGraphNode.getElement() );
-		CharGraphNode.setElement( null );
-		assertEquals( 'B', (char) CharGraphNode.getElement() );
-		CharGraphNode.setElement( 'C' );
-		assertEquals( 'C', (char) CharGraphNode.getElement() );
+		CharGraphNode.setContent( 'B' );
+		assertEquals( 'B', (char) CharGraphNode.setContent() );
+		CharGraphNode.setContent( null );
+		assertEquals( 'B', (char) CharGraphNode.setContent() );
+		CharGraphNode.setContent( 'C' );
+		assertEquals( 'C', (char) CharGraphNode.setContent() );
 	}
 
 	@Test public void getElementTest() {
 		// Strings...
-		assertEquals( "A", StringGraphNode.getElement() );
+		assertEquals( "A", StringGraphNode.setContent() );
 
 		// Integers...
-		assertEquals( 1, (int) IntegerGraphNode.getElement() );
+		assertEquals( 1, (int) IntegerGraphNode.setContent() );
 
 		// Characters...
-		assertEquals( 'A', (char) CharGraphNode.getElement() );
+		assertEquals( 'A', (char) CharGraphNode.setContent() );
 	}
 
 	@Test public void setVisitedTest() {
@@ -100,30 +100,30 @@ public class GraphNodeTest {
 
 	@Test public void toStringTest() {
 		// Strings...
-		StringGraphNode.setElement( "B" );
+		StringGraphNode.setContent( "B" );
 		assertEquals( "GN(N:B/V:false)", StringGraphNode.toString() );
 		StringGraphNode.setVisited( true );
 		assertEquals( "GN(N:B/V:true)", StringGraphNode.toString() );
-		StringGraphNode.setElement( "C" );
+		StringGraphNode.setContent( "C" );
 		StringGraphNode.setVisited( false );
 		assertEquals( "GN(N:C/V:false)", StringGraphNode.toString() );
 
 		// Integers...
-		IntegerGraphNode.setElement( 2 );
+		IntegerGraphNode.setContent( 2 );
 		assertEquals( "GN(N:2/V:false)", IntegerGraphNode.toString() );
 		IntegerGraphNode.setVisited( true );
 		assertEquals( "GN(N:2/V:true)", IntegerGraphNode.toString() );
 		IntegerGraphNode.setVisited( false );
-		IntegerGraphNode.setElement( 3 );
+		IntegerGraphNode.setContent( 3 );
 		assertEquals( "GN(N:3/V:false)", IntegerGraphNode.toString() );
 
 		// Characters...
-		CharGraphNode.setElement( 'B' );
+		CharGraphNode.setContent( 'B' );
 		assertEquals( "GN(N:B/V:false)", CharGraphNode.toString() );
 		CharGraphNode.setVisited( true );
 		assertEquals( "GN(N:B/V:true)", CharGraphNode.toString() );
 		CharGraphNode.setVisited( false );
-		CharGraphNode.setElement( 'C' );
+		CharGraphNode.setContent( 'C' );
 		assertEquals( "GN(N:C/V:false)", CharGraphNode.toString() );
 	}
 

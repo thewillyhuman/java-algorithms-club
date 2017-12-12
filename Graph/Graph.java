@@ -47,7 +47,7 @@ public class Graph<T extends Comparable<T>> {
 	public int node( T node ) {
 		int i = 0;
 		for (GraphNode<T> curr : nodes) {
-			if (node.compareTo( curr.getElement() ) == 0)
+			if (node.compareTo( curr.setContent() ) == 0)
 				return i;
 			i++;
 		}
@@ -55,7 +55,7 @@ public class Graph<T extends Comparable<T>> {
 	}
 
 	public T elementAt( int index ) {
-		return nodes.get( index ).getElement();
+		return nodes.get( index ).setContent();
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class Graph<T extends Comparable<T>> {
 					"The node cannot be added because there's no space." );
 		}
 		for (GraphNode<T> node : nodes) {
-			if (node.getElement().equals( element ))
+			if (node.setContent().equals( element ))
 				throw new Exception( "Element is already in the graph." );
 		}
 		nodes.add( new GraphNode<T>( element ) );
@@ -170,7 +170,7 @@ public class Graph<T extends Comparable<T>> {
 	}
 
 	public void print() throws Exception {
-		System.out.println( traverseGraph( nodes.get( 0 ).getElement() ) );
+		System.out.println( traverseGraph( nodes.get( 0 ).setContent() ) );
 	}
 
 	/**
@@ -386,7 +386,6 @@ public class Graph<T extends Comparable<T>> {
 
 	}
 
-	/* ---------- 2015-16 EXAM METHOD ---------- */
 	/**
 	 * It return the number of nodes n such that is possible to go from the
 	 * source to them and return to the source with no more cost than the one
@@ -414,7 +413,8 @@ public class Graph<T extends Comparable<T>> {
 		return result;
 	}
 
-	/* ---------- SOME OWN EXAMPLES OF WORKING WITH GRAPHS ---------- */
+	/* ---------- SOME EXAMPLES OF WORKING WITH GRAPHS ---------- */
+	
 	/**
 	 * IMPLEMENTING FLOYD Checks whether a node is strongly connected, i.e.
 	 * there is a path from the node to every other node in the graph and at the
@@ -446,7 +446,7 @@ public class Graph<T extends Comparable<T>> {
 	 * @return the maximum distance from this node to every other node as a
 	 *         double.
 	 */
-	public double excentricidad( T node ) {
+	public double eccentricity( T node ) {
 		int index = node( node );
 		floyd( size() );
 		double result = 0.0;
@@ -469,7 +469,7 @@ public class Graph<T extends Comparable<T>> {
 	 * @return the maximum distance from this node to every other node as a
 	 *         double.
 	 */
-	public double excentricidadDijkstra( T node ) {
+	public double eccentricityDijkstra( T node ) {
 		Dijkstra( node );
 		double distances[][] = getD();
 		double result = 0.0;
@@ -488,10 +488,10 @@ public class Graph<T extends Comparable<T>> {
 	 * 
 	 * @return double diameter.
 	 */
-	public double diametro() {
+	public double diameter() {
 		double result = 0.0;
 		for (GraphNode<T> node : nodes) {
-			double ex = excentricidad( node.getElement() );
+			double ex = eccentricity( node.setContent() );
 			if (ex > result) {
 				result = ex;
 			}
@@ -506,10 +506,10 @@ public class Graph<T extends Comparable<T>> {
 	 * 
 	 * @return
 	 */
-	public double diametroDijkstra() {
+	public double diameterDijkstra() {
 		double result = 0.0;
 		for (GraphNode<T> node : nodes) {
-			double ex = excentricidadDijkstra( node.getElement() );
+			double ex = eccentricityDijkstra( node.setContent() );
 			if (ex > result) {
 				result = ex;
 			}
@@ -525,7 +525,7 @@ public class Graph<T extends Comparable<T>> {
 	 * @param node
 	 * @return integer value with the number of aristas.
 	 */
-	public int gradoNodo( T node ) {
+	public int degreeOf( T node ) {
 		int index = node( node );
 		int result = 0;
 		for (int i = 0; i < size(); i++) {
@@ -541,10 +541,10 @@ public class Graph<T extends Comparable<T>> {
 	 * 
 	 * @return integer. Número mínimo de aristas incidentes
 	 */
-	public int minGradoNodo() {
+	public int minDegree() {
 		int result = Integer.MAX_VALUE;
 		for (GraphNode<T> node : nodes) {
-			int gn = gradoNodo( node.getElement() );
+			int gn = degreeOf( node.setContent() );
 			if (gn < result)
 				result = gn;
 		}
@@ -557,10 +557,10 @@ public class Graph<T extends Comparable<T>> {
 	 * 
 	 * @return integer. Número máximo de aristas que incide
 	 */
-	public int maxGradoNodo() {
+	public int maxDegree() {
 		int result = 0;
 		for (GraphNode<T> node : nodes) {
-			int gn = gradoNodo( node.getElement() );
+			int gn = degreeOf( node.setContent() );
 			if (gn > result)
 				result = gn;
 		}

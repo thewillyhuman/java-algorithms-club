@@ -646,7 +646,7 @@ public class GraphTest {
 		} catch (Exception e) {
 			System.out.println( e );
 		}
-		assertEquals( 7, (int) integerGraph.diametro() );
+		assertEquals( 7, (int) integerGraph.diameter() );
 	}
 
 	@Test public void diametroDijkstraTest() {
@@ -662,7 +662,7 @@ public class GraphTest {
 		} catch (Exception e) {
 			System.out.println( e );
 		}
-		assertEquals( 7, (int) integerGraph.diametroDijkstra() );
+		assertEquals( 7, (int) integerGraph.diameterDijkstra() );
 	}
 
 	@Test public void gradoNodoTest() {
@@ -678,7 +678,7 @@ public class GraphTest {
 		} catch (Exception e) {
 			System.out.println( e );
 		}
-		assertEquals( 2, integerGraph.gradoNodo( 3 ) );
+		assertEquals( 2, integerGraph.degreeOf( 3 ) );
 	}
 
 	@Test public void minGradoNodoTest() {
@@ -694,7 +694,7 @@ public class GraphTest {
 		} catch (Exception e) {
 			System.out.println( e );
 		}
-		assertEquals( 0, integerGraph.minGradoNodo() );
+		assertEquals( 0, integerGraph.minDegree() );
 	}
 
 	@Test public void maxGradoNodoTest() {
@@ -710,7 +710,7 @@ public class GraphTest {
 		} catch (Exception e) {
 			System.out.println( e );
 		}
-		assertEquals( 2, integerGraph.maxGradoNodo() );
+		assertEquals( 2, integerGraph.maxDegree() );
 	}
 
 }

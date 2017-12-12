@@ -10,22 +10,22 @@ package Graph;
  */
 public class GraphNode<T extends Comparable<T>> {
 
-	private T element;
+	private T content;
 	private boolean visited;
 
-	public GraphNode( T element ) {
-		setElement( element );
+	public GraphNode( T content ) {
+		setContent( content );
 		setVisited( false );
 	}
 
 	/**
 	 * Sets the element of the node.
 	 * 
-	 * @param element to be stored.
+	 * @param content to be stored.
 	 */
-	public void setElement( T element ) {
-		if (element != null)
-			this.element = element;
+	public void setContent( T content ) {
+		if (content != null)
+			this.content = content;
 	}
 
 	/**
@@ -33,8 +33,8 @@ public class GraphNode<T extends Comparable<T>> {
 	 * 
 	 * @return the element stored in the node.
 	 */
-	public T getElement() {
-		return this.element;
+	public T setContent() {
+		return this.content;
 	}
 
 	/**
@@ -60,7 +60,7 @@ public class GraphNode<T extends Comparable<T>> {
 	 */
 	public String toString() {
 		StringBuilder toReturn = new StringBuilder();
-		toReturn.append( "GN(N:" ).append( this.getElement().toString() )
+		toReturn.append( "GN(N:" ).append( this.setContent().toString() )
 				.append( "/V:" ).append( this.isVisited() ).append( ")" );
 		return toReturn.toString();
 	}
